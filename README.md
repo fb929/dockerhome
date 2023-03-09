@@ -18,10 +18,8 @@ sudo su - g.efimov
 
 ## use
 ```
-sudo cryptsetup luksClose data
-sudo cryptsetup luksOpen /mnt/file data
-sudo mount /dev/mapper/data /home/
-sudo su - g.efimov
+make run
+/mnt/run.sh
 ```
 
 ## useful commands
