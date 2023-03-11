@@ -3,7 +3,11 @@ MNT_DIR := $(shell pwd)/mnt
 
 build:
 	install -d $(MNT_DIR)
-	docker image build --build-arg USER=$(USER) --file Dockerfile --tag home .
+	docker image build \
+		--build-arg USER=$(USER) \
+		--file Dockerfile \
+		--tag home \
+		.
 run:
 	docker run \
 		--interactive \
