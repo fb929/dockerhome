@@ -18,7 +18,8 @@ RUN yum install -y \
     pinentry \
     whois \
     bind-utils \
-    iputils
+    iputils \
+    iproute
 RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
