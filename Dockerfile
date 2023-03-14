@@ -19,7 +19,8 @@ RUN yum install -y \
     whois \
     bind-utils \
     iputils \
-    iproute
+    iproute \
+    telnet
 RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
