@@ -1,5 +1,6 @@
 USER := g.efimov
 MNT_DIR := $(shell pwd)/mnt
+export DOCKER_BUILDKIT:=1
 
 build:
 	install -d $(MNT_DIR)
