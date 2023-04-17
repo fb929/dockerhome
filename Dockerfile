@@ -29,7 +29,7 @@ RUN case ${TARGETPLATFORM} in \
         iproute \
         telnet \
         awscli \
-        https://github.com/fb929/xc/releases/download/v0.0.3/xc-0.0.3-1.${ARCH}.rpm
+        https://github.com/fb929/xc/releases/download/v0.0.4/xc-0.0.4-1.${ARCH}.rpm
 RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
