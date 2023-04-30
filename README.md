@@ -6,14 +6,6 @@ home in docker
 # build and run docker container
 make
 
-# run already builded container
-make run
-
-# run with custom "search" for resolv.conf
-make DNS_SEARCH=mydomain.com
-# or
-make run DNS_SEARCH=mydomain.com
-
 # create encrypt data
 sudo fallocate -l 10G /mnt/file
 sudo cryptsetup -y luksFormat /mnt/file
@@ -25,7 +17,16 @@ sudo su - g.efimov
 
 ## use
 ```
+# build and run docker container
+make
+
+# run already builded container
 make run
+
+# run with custom "search" for resolv.conf
+make run DNS_SEARCH=mydomain.com
+
+# attaching encrypt filesystem
 /mnt/run.sh
 ```
 
