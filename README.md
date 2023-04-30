@@ -1,9 +1,12 @@
 # dockerhome
-home in docker
+home in docker with encrypted home dir
+
+## requires
+[docker desktop](https://docs.docker.com/desktop)
 
 ## for init
 ```
-# build and run docker container
+# building and run docker container
 make
 
 # create encrypt data
@@ -12,12 +15,13 @@ sudo cryptsetup -y luksFormat /mnt/file
 sudo cryptsetup luksOpen /mnt/file data
 sudo mkfs.ext4 -m 0 /dev/mapper/data
 sudo mount /dev/mapper/data /home/
-sudo su - g.efimov
+sudo su - <your user>
 ```
+**$${\color{red}!!! file ./mnt/file is too big for github, so you should be backup it yourself in any way convenient for you !!!}$$**
 
-## use
+## usage
 ```
-# build and run docker container
+# building and run docker container
 make
 
 # run already builded container
@@ -25,6 +29,9 @@ make run
 
 # run with custom "search" for resolv.conf
 make run DNS_SEARCH=mydomain.com
+
+# building and run with custom user, by default user is taken from command "id -un"
+make run USER=<myusername>
 
 # attaching encrypt filesystem
 /mnt/run.sh
