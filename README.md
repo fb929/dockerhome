@@ -17,7 +17,8 @@ sudo mkfs.ext4 -m 0 /dev/mapper/data
 sudo mount /dev/mapper/data /home/
 sudo su - <your user>
 ```
-**$${\color{red}!!! file ./mnt/file is too big for github, so you should be backup it yourself in any way convenient for you !!!}$$**
+> __Warning__
+file ./mnt/file is too big for github, so you should be backup it yourself in any way convenient for you
 
 ## usage
 ```
