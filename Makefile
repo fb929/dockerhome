@@ -1,4 +1,8 @@
-USER := g.efimov
+.DEFAULT_GOAL := run
+SHELL := /bin/bash
+
+USER := $(shell id -un)
+DNS_SEARCH := "local"
 MNT_DIR := $(shell pwd)/mnt
 export DOCKER_BUILDKIT:=1
 
@@ -9,7 +13,7 @@ build:
 		--file Dockerfile \
 		--tag home \
 		.
-run:
+run: build
 	docker run \
 		--interactive \
 		--tty \
@@ -17,5 +21,9 @@ run:
 		--rm \
 		--privileged \
 		--cap-add=ALL \
+		--dns-search $(DNS_SEARCH) \
 		home \
 		/bin/bash
+
+clean:
+	docker system prune --all
