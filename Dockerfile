@@ -30,6 +30,11 @@ RUN case ${TARGETPLATFORM} in \
         telnet \
         awscli \
         https://github.com/fb929/xc/releases/download/v0.0.4/xc-0.0.4-1.${ARCH}.rpm
+# terraform {{
+RUN dnf install -y dnf-plugins-core
+RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+RUN dnf -y install terraform
+# }}
 RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
 WORKDIR /home/$USER
