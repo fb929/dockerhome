@@ -22,6 +22,8 @@ run: build
 		--privileged \
 		--cap-add=ALL \
 		--dns-search $(DNS_SEARCH) \
+		--dns-option "timeout:3" \
+		--dns-option "attempts:2" \
 		home \
 		/bin/bash
 
