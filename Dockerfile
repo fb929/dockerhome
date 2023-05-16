@@ -29,7 +29,8 @@ RUN case ${TARGETPLATFORM} in \
         iproute \
         telnet \
         awscli \
-        https://github.com/fb929/xc/releases/download/v0.0.4/xc-0.0.4-1.${ARCH}.rpm
+        https://github.com/fb929/xc/releases/download/v0.0.4/xc-0.0.4-1.${ARCH}.rpm \
+        openvpn
 # terraform {{
 RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
