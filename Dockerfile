@@ -30,6 +30,7 @@ RUN case ${TARGETPLATFORM} in \
         telnet \
         awscli \
         https://github.com/fb929/xc/releases/download/v0.0.4/xc-0.0.4-1.${ARCH}.rpm \
+        python3-pyyaml \
         openvpn
 # terraform {{
 RUN dnf install -y dnf-plugins-core
