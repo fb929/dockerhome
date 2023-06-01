@@ -29,7 +29,8 @@ RUN case ${TARGETPLATFORM} in \
         iproute \
         telnet \
         awscli \
-        https://github.com/fb929/xc/releases/download/v0.0.5/xc-0.0.5-1.${ARCH}.rpm \
+        traceroute \
+        https://github.com/fb929/xc/releases/download/v0.0.6/xc-0.0.6-1.${ARCH}.rpm \
         python3-pyyaml \
         openvpn
 # terraform {{

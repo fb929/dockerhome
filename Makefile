@@ -2,7 +2,8 @@
 SHELL := /bin/bash
 
 USER := $(shell id -un)
-DNS_SEARCH := "local"
+DNS := $(shell grep '^nameserver' /etc/resolv.conf | sed 's|nameserver|--dns|' | xargs echo )
+DNS_SEARCH := $(shell grep '^search' /etc/resolv.conf | sed -e 's|^search||; s| | --dns-search |g')
 MNT_DIR := $(shell pwd)/mnt
 export DOCKER_BUILDKIT:=1
 
@@ -21,9 +22,11 @@ run: build
 		--rm \
 		--privileged \
 		--cap-add=ALL \
-		--dns-search $(DNS_SEARCH) \
+		$(DNS) \
+		$(DNS_SEARCH) \
 		--dns-option "timeout:3" \
 		--dns-option "attempts:2" \
+		--dns-option "use-vc" \
 		home \
 		/bin/bash
 
