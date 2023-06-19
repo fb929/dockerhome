@@ -32,7 +32,9 @@ RUN case ${TARGETPLATFORM} in \
         traceroute \
         https://github.com/fb929/xc/releases/download/v0.0.6/xc-0.0.6-1.${ARCH}.rpm \
         python3-pyyaml \
-        openvpn
+        openvpn \
+        lsof \
+        python3-pexpect
 # terraform {{
 RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
