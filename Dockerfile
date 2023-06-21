@@ -35,7 +35,9 @@ RUN case ${TARGETPLATFORM} in \
         openvpn \
         lsof \
         python3-pexpect \
-        python3-gnupg
+        python3-gnupg \
+        python3-pip \
+    echo
 # terraform {{
 RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
