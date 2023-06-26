@@ -1,4 +1,4 @@
- aFROM fedora:38
+FROM fedora:38
 ENV TZ 'Europe/Moscow'
 ARG USER
 RUN useradd --create-home --shell /bin/bash $USER
@@ -38,7 +38,7 @@ RUN case ${TARGETPLATFORM} in \
         python3-gnupg \
         python3-pip \
         https://github.com/fb929/rsh/releases/download/v0.0.1/rsh-0.0.1-1.noarch.rpm \
-    echo
+    && echo
 # terraform {{
 RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
