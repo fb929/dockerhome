@@ -37,7 +37,7 @@ RUN case ${TARGETPLATFORM} in \
         python3-pexpect \
         python3-gnupg \
         python3-pip \
-        https://github.com/fb929/rsh/releases/download/v0.0.3/rsh-0.0.3-1.noarch.rpm \
+        https://github.com/fb929/rsh/releases/download/v0.0.4/rsh-0.0.4-1.noarch.rpm \
         jq \
     && echo
 # terraform {{
