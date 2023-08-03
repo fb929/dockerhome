@@ -3,6 +3,8 @@ ENV TZ 'Europe/Moscow'
 ARG USER
 RUN useradd --create-home --shell /bin/bash $USER
 ARG TARGETPLATFORM
+ARG XC_VERSION=0.0.6
+ARG RSH_VERSION=0.0.4
 RUN case ${TARGETPLATFORM} in \
          "linux/amd64") ARCH=x86_64;; \
          "linux/arm64") ARCH=aarch64;; \
@@ -30,14 +32,14 @@ RUN case ${TARGETPLATFORM} in \
         telnet \
         awscli \
         traceroute \
-        https://github.com/fb929/xc/releases/download/v0.0.6/xc-0.0.6-1.${ARCH}.rpm \
+        https://github.com/fb929/xc/releases/download/v${XC_VERSION}/xc-${XC_VERSION}-1.${ARCH}.rpm \
         python3-pyyaml \
         openvpn \
         lsof \
         python3-pexpect \
         python3-gnupg \
         python3-pip \
-        https://github.com/fb929/rsh/releases/download/v0.0.4/rsh-0.0.4-1.noarch.rpm \
+        https://github.com/fb929/rsh/releases/download/v${RSH_VERSION}/rsh-${RSH_VERSION}-1.noarch.rpm \
         jq \
     && echo
 # terraform {{
