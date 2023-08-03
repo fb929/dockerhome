@@ -4,7 +4,7 @@ ARG USER
 RUN useradd --create-home --shell /bin/bash $USER
 ARG TARGETPLATFORM
 ARG XC_VERSION=0.0.6
-ARG RSH_VERSION=0.0.4
+ARG RSH_VERSION=0.0.5
 RUN case ${TARGETPLATFORM} in \
          "linux/amd64") ARCH=x86_64;; \
          "linux/arm64") ARCH=aarch64;; \
