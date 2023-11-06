@@ -39,6 +39,7 @@ RUN case ${TARGETPLATFORM} in \
         python3-pexpect \
         python3-gnupg \
         python3-pip \
+        python3-ovh \
         https://github.com/fb929/rsh/releases/download/v${RSH_VERSION}/rsh-${RSH_VERSION}-1.noarch.rpm \
         jq \
     && echo
