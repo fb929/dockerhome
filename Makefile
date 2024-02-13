@@ -31,4 +31,4 @@ run: build
 		/bin/bash
 
 clean:
-	docker system prune --all
+	docker system prune --all --volumes --force
