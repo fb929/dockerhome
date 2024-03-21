@@ -42,7 +42,7 @@ RUN case ${TARGETPLATFORM} in \
         python3-ovh \
         https://github.com/fb929/rsh/releases/download/v${RSH_VERSION}/rsh-${RSH_VERSION}-1.noarch.rpm \
         jq \
-        python3-fabric \
+        python3-devel \
     && echo
 # terraform {{
 RUN dnf install -y dnf-plugins-core
