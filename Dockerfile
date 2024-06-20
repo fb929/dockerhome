@@ -47,7 +47,7 @@ RUN case ${TARGETPLATFORM} in \
 # terraform {{
 RUN dnf install -y dnf-plugins-core
 RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
-RUN dnf -y install terraform
+#RUN dnf -y install terraform
 # }}
 RUN echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $USER
