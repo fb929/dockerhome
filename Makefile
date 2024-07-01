@@ -14,7 +14,7 @@ build:
 		--file Dockerfile \
 		--tag home \
 		.
-run: build
+run:
 	docker run \
 		--interactive \
 		--tty \
@@ -27,7 +27,7 @@ run: build
 		--dns-option "timeout:3" \
 		--dns-option "attempts:2" \
 		--dns-option "use-vc" \
-		home \
+		ghcr.io/fb929/dockerhome \
 		/bin/bash
 
 clean:

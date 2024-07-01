@@ -10,7 +10,7 @@ RUN case ${TARGETPLATFORM} in \
          "linux/arm64") ARCH=aarch64;; \
          *) ARCH=unknown;; \
     esac \
-    && yum install -y \
+    && dnf install -y \
         glibc-langpack-en \
         hostname \
         git \
@@ -43,7 +43,8 @@ RUN case ${TARGETPLATFORM} in \
         https://github.com/fb929/rsh/releases/download/v${RSH_VERSION}/rsh-${RSH_VERSION}-1.noarch.rpm \
         jq \
         python3-devel \
-    && echo
+    && dnf clean all \
+    && rm -rf /var/cache/dnf
 # terraform {{
 #RUN dnf install -y dnf-plugins-core
 #RUN dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
