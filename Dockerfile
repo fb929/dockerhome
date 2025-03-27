@@ -43,6 +43,7 @@ RUN case ${TARGETPLATFORM} in \
         https://github.com/fb929/rsh/releases/download/v${RSH_VERSION}/rsh-${RSH_VERSION}-1.noarch.rpm \
         jq \
         python3-devel \
+        libxcrypt-compat \
     && dnf clean all \
     && rm -rf /var/cache/dnf
 # terraform {{
