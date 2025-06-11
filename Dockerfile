@@ -4,7 +4,7 @@ ARG USER="g.efimov"
 RUN useradd --create-home --shell /bin/bash --password '$y$j9T$YDcWiJnid5kaqNfIkyyhb/$ef2BLaDOTrFuCxJz96A0KIowyi26.o7ySiLuJApcke3' $USER
 ARG TARGETPLATFORM
 ARG XC_VERSION=0.0.6
-ARG RSH_VERSION=2.0.7
+ARG RSH_VERSION=2.0.9
 RUN case ${TARGETPLATFORM} in \
          "linux/amd64") ARCH=x86_64;; \
          "linux/arm64") ARCH=aarch64;; \
