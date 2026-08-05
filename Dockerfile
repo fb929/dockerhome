@@ -1,4 +1,5 @@
 FROM fedora:38
+RUN sed -i 's/^hosts:.*/hosts:      files dns/' /etc/nsswitch.conf
 ENV TZ 'Europe/Moscow'
 ARG USER="g.efimov"
 RUN useradd --create-home --shell /bin/bash --password '$y$j9T$YDcWiJnid5kaqNfIkyyhb/$ef2BLaDOTrFuCxJz96A0KIowyi26.o7ySiLuJApcke3' $USER

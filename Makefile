@@ -10,6 +10,7 @@ export DOCKER_BUILDKIT:=1
 build:
 	install -d $(MNT_DIR)
 	docker image build \
+		--no-cache \
 		--build-arg USER=$(USER) \
 		--file Dockerfile \
 		--tag home \
