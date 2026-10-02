@@ -20,6 +20,7 @@ run:
 		--interactive \
 		--tty \
 		--volume $(MNT_DIR):/mnt \
+		--volume "$(HOME)/AI:/data/AI" \
 		--rm \
 		--privileged \
 		--cap-add=ALL \
