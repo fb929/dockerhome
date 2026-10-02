@@ -2,7 +2,8 @@
 SHELL := /bin/bash
 
 USER := $(shell id -un)
-DNS := $(shell grep '^nameserver' /etc/resolv.conf | sed 's|nameserver|--dns|' | xargs echo )
+#DNS := $(shell grep '^nameserver' /etc/resolv.conf | sed 's|nameserver|--dns|' | xargs echo )
+DNS := "--dns 1.1.1.1"
 DNS_SEARCH := $(shell grep '^search' /etc/resolv.conf | sed -e 's|^search||; s| | --dns-search |g')
 MNT_DIR := $(shell pwd)/mnt
 export DOCKER_BUILDKIT:=1
